@@ -20,6 +20,8 @@ int& ret_ref(int& i) { return(i += 42);};
 int* r_ptr(int* i) { return(i) ;};
 // void ret_ptr(int* i) { *i += 42;};
 
+decltype(auto) getRef(int x) { return x; };
+
 int main(int argc, char* argv[]) {
   cout << "Number of args: " << argc << endl;
   for (int i=0; i < argc; i++) {
@@ -41,15 +43,20 @@ int main(int argc, char* argv[]) {
   cout << i << endl;
 
   cout << "ret ref: " << i << " => ";
-  int j = ret_ref(i);
-  cout << j << endl;
+  int j_ref = ret_ref(i);
+  cout << j_ref << endl;
   i++;
-  cout << j << endl;
+  cout << j_ref << endl;
+  cout << i << endl;
 
   cout << "ret ptr: " << i << " => ";
   int* k = r_ptr(&i);
   cout << k << " " << *k << endl;
   cout << *r_ptr(&i) << endl;
+
+  cout << "getRef: " << i << " => ";
+  cout << getRef(i+1) << endl;
+  cout << i << endl;
 
   
 }
