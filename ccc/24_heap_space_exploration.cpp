@@ -8,7 +8,18 @@
 #include <stdio.h>
 #include <stdexcept>
 #include <iostream>
-#include <cstddef>
+#include <new>
+
+struct Bucket {
+  const static size_t data_size{ 4096 };
+  std::byte data[data_size];
+};
+
+struct Heap {
+  void* allocate(size_t bytes) {
+    // not continuing...
+  }
+};
 
 using namespace std;
 
@@ -17,26 +28,5 @@ int main(int argc, char* argv[]) {
   for (int i=0; i < argc; i++) {
     cout << "Arg " << i << ": " << argv[i] << endl;
   }
-
-  int* dyn_arr = new int[1];
-
-  *(dyn_arr + 0) = 1;
-  *(dyn_arr + 1) = 2;
-  *(dyn_arr + 2) = 43;
-  *(dyn_arr + 3) = 43;
-
-  // for (auto x : dyn_arr) {
-  //     cout << x << endl;
-  // }
-
-  for (int i = 0; i <= 3; i++) {
-    cout << dyn_arr[i] << endl;
-  }
-
-  auto s = "Hello!";
-
-  cout << s << endl;
-
-
 
 }

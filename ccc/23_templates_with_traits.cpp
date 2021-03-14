@@ -9,8 +9,21 @@
 #include <stdexcept>
 #include <iostream>
 #include <cstddef>
+#include <type_traits>
+// #include <concepts>
 
 using namespace std;
+
+struct Book {
+  int id;
+  string title;
+  bool borrowed;
+};
+
+// template <typename T>
+// concept Library = requires(T a) {
+//   a.get() -> std::is_array
+// };
 
 int main(int argc, char* argv[]) {
   cout << "Number of args: " << argc << endl;
@@ -18,32 +31,6 @@ int main(int argc, char* argv[]) {
     cout << "Arg " << i << ": " << argv[i] << endl;
   }
 
-  int* i_ptr;
-  int i = 10;
-
-  if (i_ptr != NULL) i_ptr = &i;
-  i_ptr = &i;
-
-  cout << "i_ptr " << *i_ptr << endl;
-
-  i = 42;
-
-  cout << "i_ptr " << *i_ptr << endl;
-
-  int** i_ptr_ptr;
-
-
-  i_ptr_ptr = &i_ptr;
-
-  cout << "i_ptr_ptr " << **i_ptr_ptr << endl;
-
-  i_ptr_ptr = nullptr;
-
-  cout << "i_ptr_ptr " << i_ptr_ptr << endl;
-
-  delete i_ptr_ptr;
-
-  cout << "i_ptr_ptr " << i_ptr_ptr << endl;
-
+  auto b = Book{1, "Effective C++", false};
 
 }

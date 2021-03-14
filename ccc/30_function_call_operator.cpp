@@ -3,7 +3,7 @@
  * 
  * E-Mail: devcon@admantium.com
  *
- * SPDX-License-Identifier: GPL-3.0-only
+ * SPDX-License-Identifier: BSD-3-Clause
  */
 #include <stdio.h>
 #include <stdexcept>
@@ -20,9 +20,9 @@ struct Callable {
 
 int main(int argc, char* argv[]) {
   cout << "Number of args: " << argc << endl;
-  // for (int i=0; i <= argc; i++) {
-  //   cout << "Arg " << i << ": " << argv[i] << endl;
-  // }
+  for (int i=0; i <= argc; i++) {
+    cout << "Arg " << i << ": " << argv[i] << endl;
+  }
 
   function<void()> v_func;
   

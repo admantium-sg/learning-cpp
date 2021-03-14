@@ -3,7 +3,7 @@
  * 
  * E-Mail: devcon@admantium.com
  *
- * SPDX-License-Identifier: GPL-3.0-only
+ * SPDX-License-Identifier: BSD-3-Clause
  */
 #include <stdio.h>
 

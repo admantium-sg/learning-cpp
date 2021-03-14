@@ -12,9 +12,11 @@
 
 using namespace std;
 
-int main(int argc, char* argv[]) {
-  cout << "Number of args: " << argc << endl;
-  for (int i=0; i < argc; i++) {
-    cout << "Arg " << i << ": " << argv[i] << endl;
-  }
+template<typename... T>
+constexpr auto sum(T... args) {
+  return (... + args);
+}
+
+int main() {
+  cout << "Folding of ints " << sum(1,3,5,6,7,14) << endl;
 }
