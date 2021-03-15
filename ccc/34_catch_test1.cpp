@@ -11,7 +11,7 @@
 #include <cstddef>
 
 #define CATCH_CONFIG_MAIN
-#include "catch/catch.hpp"
+#include <catch.hpp>
 
 template <class T>
 constexpr T sum (T a, T b) {
@@ -20,5 +20,5 @@ constexpr T sum (T a, T b) {
 
 TEST_CASE("Sum ints") {
   REQUIRE (sum<int>(1,41) == 42);
-  REQUIRE (sum<double>(2.3, 40.7) == 42.0);
+  REQUIRE (sum<double>(1.3, 40.7) == 42.0);
 }
