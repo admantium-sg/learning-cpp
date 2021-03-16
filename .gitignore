@@ -22,3 +22,5 @@ build
 redis.conf
 secrets.yml
 backup/
+catch/
+*.out
