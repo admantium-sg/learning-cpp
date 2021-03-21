@@ -1,10 +1,12 @@
-/*
- * Copyright (c) 2021 Sebastian Günther 
- * 
- * E-Mail: devcon@admantium.com
- *
- * SPDX-License-Identifier: BSD-3-Clause
- */
+/* 
+* ---------------------------------------
+* Copyright (c) Sebastian Günther 2021  |
+*                                       |    
+* devcon@admantium.com                  |    
+*                                       | 
+* SPDX-License-Identifier: BSD-3-Clause | 
+* ---------------------------------------
+*/
 #include <stdio.h>
 #include <stdexcept>
 #include <iostream>
@@ -48,6 +50,4 @@ int main(int argc, char* argv[]) {
   cout << "Tally :" << count_s.tally << endl;
 
   cout << "Lambda Returns " << [](int x, double y) -> decltype(x + y) { return x+y;} << endl;
-
-
 }

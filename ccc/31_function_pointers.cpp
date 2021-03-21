@@ -17,7 +17,4 @@ int main() {
 
   std::cout << "add_ptr address " << &add_ptr << "\n";
   std::cout << "add_ptr result " << sum << "\n";
-
-  std::cout << "add_ptr2 address " << &add_ptr2 << "\n";
-
 }

@@ -1,10 +1,12 @@
-/*
- * Copyright (c) 2021 Sebastian Günther 
- * 
- * E-Mail: devcon@admantium.com
- *
- * SPDX-License-Identifier: BSD-3-Clause
- */
+/* 
+* ---------------------------------------
+* Copyright (c) Sebastian Günther 2021  |
+*                                       |    
+* devcon@admantium.com                  |    
+*                                       | 
+* SPDX-License-Identifier: BSD-3-Clause | 
+* ---------------------------------------
+*/
 #include <stdio.h>
 #include <stdexcept>
 #include <iostream>
@@ -12,7 +14,6 @@
 
 struct Bucket {
   const static size_t data_size{ 4096 };
-  std::byte data[data_size];
 };
 
 struct Heap {

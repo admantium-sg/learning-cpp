@@ -1,10 +1,12 @@
-/*
- * Copyright (c) 2021 Sebastian Günther 
- * 
- * E-Mail: devcon@admantium.com
- *
- * SPDX-License-Identifier: BSD-3-Clause
- */
+/* 
+* ---------------------------------------
+* Copyright (c) Sebastian Günther 2021  |
+*                                       |    
+* devcon@admantium.com                  |    
+*                                       | 
+* SPDX-License-Identifier: BSD-3-Clause | 
+* ---------------------------------------
+*/
 #include <stdio.h>
 #include <stdexcept>
 #include <iostream>
@@ -25,13 +27,6 @@ struct SimpleUniquePointer {
     : pointer{ other.pointer } {
       other.pointer = nullptr;
     }
-
-  SimpleUniquePointer& operator=(SimpleUniquePointer&& other) noexcept {
-    if(pointer) delete pointer;
-    pointer=other.pointer;
-    other.pointer=nullptr;
-    return *this;
-  }
 
   T* get() {
     return pointer;
@@ -55,7 +50,7 @@ int main(int argc, char* argv[]) {
 
   auto b = Book{1, "Effective C++", false};
 
-  auto ptr = SimpleUniquePointer{ &b };
+  auto ptr = SimpleUniquePointer<Book>{ &b };
 
   cout << ptr.get()->title << endl;
 }
